@@ -105,6 +105,14 @@ jobs:
             echo "WARN: RetroArch.app not found"
           fi
 
+      - name: Embed entitlements in app bundle
+        run: |
+          APP=$(find retroarch -name "RetroArch.app" -type d 2>/dev/null | head -1)
+          if [ -n "$APP" ]; then
+            cp trident/ios/Trident.entitlements "$APP/Trident.entitlements"
+            echo "Embedded entitlements into app bundle"
+          fi
+
       - name: Package IPA
         run: |
           APP=$(find retroarch -name "RetroArch.app" -type d 2>/dev/null | head -1)
