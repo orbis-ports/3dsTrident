@@ -29,6 +29,6 @@ hw_render = "true"
 required_hw_api = "OpenGL Core >= 4.1 | OpenGL ES >= 3.0"
 needs_fullpath = "true"
 disk_control = "false"
-is_experimental = "true"
+is_experimental = "false"
 
 description = "A 3DS libretro core powered by the Panda3DS emulation engine."
